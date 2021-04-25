@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -18,7 +19,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class MenuPane extends StackPane{
-	private Button startBtn , optionBtn , quitBtn;
+	private Button startBtn , HowToPlayBtn , quitBtn;
 	
 	public MenuPane() {
 		super();
@@ -29,11 +30,11 @@ public class MenuPane extends StackPane{
 		menu.setPadding(new Insets(120,0,80,0));
 		menu.setAlignment(Pos.TOP_CENTER);
 		
-		Text gametitle = new Text("Animal Fight!!");
+		Text gametitle = new Text("Animal Fight!!!");
 		gametitle.setFont(Font.font("Verdana", FontWeight.BOLD , FontPosture.ITALIC, 80));
-		gametitle.setFill(Color.CRIMSON);
+		gametitle.setFill(Color.WHITESMOKE);
 		gametitle.setStroke(Color.BLACK);
-		gametitle.setStrokeWidth(5);
+		gametitle.setStrokeWidth(4);
 		gametitle.setTextAlignment(TextAlignment.CENTER);
 		
 		VBox buttons = new VBox(35);
@@ -43,15 +44,15 @@ public class MenuPane extends StackPane{
 		startBtn.setFont(Font.font(24));
 		startBtn.setPrefWidth(200);
 		
-		optionBtn = new Button("Option");
-		optionBtn.setFont(Font.font(24));
-		optionBtn.setPrefWidth(200);
+		HowToPlayBtn = new Button("How to play");
+		HowToPlayBtn.setFont(Font.font(24));
+		HowToPlayBtn.setPrefWidth(200);
 		
 		quitBtn = new Button("Quit");
 		quitBtn.setFont(Font.font(24));
 		quitBtn.setPrefWidth(200);
 		
-		buttons.getChildren().addAll(startBtn , optionBtn , quitBtn);
+		buttons.getChildren().addAll(startBtn , HowToPlayBtn , quitBtn);
 		
 		menu.getChildren().addAll(gametitle , buttons);
 		
@@ -64,8 +65,8 @@ public class MenuPane extends StackPane{
 		return startBtn;
 	}
 
-	public Button getoptionButton(){ 
-		return optionBtn;
+	public Button getHowToPlayButton(){ 
+		return HowToPlayBtn;
 	}
 	
 	public Button getquitButton(){ 

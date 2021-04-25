@@ -1,6 +1,7 @@
 package application;
 
 import Drawing.GameScreen;
+import gui.HowToPlayPane;
 import gui.MenuPane;
 import input.InputUtility;
 import javafx.animation.AnimationTimer;
@@ -24,6 +25,7 @@ public class Main extends Application{
 		// TODO Auto-generated method stub
 		// Intialize main menu
 		MenuPane menu = new MenuPane();
+		HowToPlayPane howToPlay = new HowToPlayPane();
 		Scene menuscene = new Scene(menu, 800 ,600);
 		stage.setScene(menuscene);
 		stage.setTitle("Animal Fight!!");
@@ -56,10 +58,22 @@ public class Main extends Application{
 			}
 		});
 			//set option button
-			menu.getoptionButton().setOnAction(new EventHandler<ActionEvent>() {
+			menu.getHowToPlayButton().setOnAction(new EventHandler<ActionEvent>() {
 				@Override
 				public void handle(ActionEvent event) {
-						
+					HowToPlayPane howToPlay = new HowToPlayPane();
+					Scene HowToPlayScene = new Scene(howToPlay, 800 ,600);
+					stage.setScene(HowToPlayScene);
+					stage.setTitle("How To Play");
+					stage.show();		
+					
+					//set option button
+					howToPlay.getBackButton().setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							start(stage);   
+					}
+				});
 			}
 		});
 				
@@ -70,6 +84,7 @@ public class Main extends Application{
 					stage.close();
 			}
 		});
+		
 	}
 	
 	

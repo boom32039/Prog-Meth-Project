@@ -7,7 +7,7 @@ public abstract class Entity implements IRenderable{
 	protected int z;
 	protected boolean visibility;
 	
-	public Entity(){
+	public Entity() {
 		visibility = true;
 		z = 100;
 	}

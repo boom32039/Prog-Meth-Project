@@ -15,8 +15,7 @@ public class Field implements IRenderable {
 	@Override
 	public void draw(GraphicsContext gc) {
 		gc.setFill(Color.GREEN);
-		
-		gc.fillRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
+		gc.drawImage(RenderableHolder.background, 0 , 0 ,gc.getCanvas().getWidth() , gc.getCanvas().getHeight());
 	}
 
 	@Override

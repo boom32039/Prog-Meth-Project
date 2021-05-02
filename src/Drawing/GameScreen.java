@@ -1,5 +1,6 @@
 package Drawing;
 
+import gui.GamePane;
 import input.InputUtility;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -10,7 +11,7 @@ import sharedObject.RenderableHolder;
 
 public class GameScreen extends Canvas {
 	
-	public GameScreen(double width, double height) {
+	public GameScreen(double width, double height ) {
 		super(width, height);
 		this.setVisible(true);
 		addListerner();
@@ -20,7 +21,6 @@ public class GameScreen extends Canvas {
 		this.setOnKeyPressed((KeyEvent event) -> {
 			InputUtility.setKeyPressed(event.getCode(), true);
 		});
-
 		this.setOnKeyReleased((KeyEvent event) -> {
 			InputUtility.setKeyPressed(event.getCode(), false);
 		});

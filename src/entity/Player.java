@@ -2,92 +2,86 @@ package entity;
 
 import java.util.Arrays;
 
+import entity.base.Monster;
 import input.InputUtility;
+import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyCode;
+import logic.Deck;
 import logic.PlayerField;
 import sharedObject.RenderableHolder;
 
-public class Player extends Entity{
+public abstract class Player extends Entity{
 	
-	private int currentpos ;
-	private int X,Y;
-	private boolean[] pos = {false , false , false ,false , false};
-	private boolean isPressed;
+	protected int currentpos;
+	protected int X,Y;
+	protected boolean[] pos = {false , false , false ,false , false};
+	protected boolean animalreleased;
+	protected KeyCode up;
+	protected KeyCode down;
+	protected KeyCode releaseMonster;
+	protected KeyCode choose0;
+	protected KeyCode choose1;
+	protected KeyCode choose2;
+	protected int points;
+	protected int coins;
+	protected int cooldown; 
+	protected Monster release;
+	protected Deck deck;
 	
-	public Player() {
+	public Player(Monster ...monsters) {
+		
+		points = 0;
+		cooldown = 0;
+		coins = 100;
+		deck = new Deck(monsters);
 		currentpos = 2;
 		pos[currentpos] = true;
-		isPressed = false;
-		X = RenderableHolder.getXP1();
-		Y = RenderableHolder.getYP1().get(currentpos);
 		
-	}
-	
-	@Override
-	public void draw(GraphicsContext gc ) {
-		// TODO Auto-generated method stub
 		
-		//WritableImage croppedImage = new WritableImage(RenderableHolder.playerSprite.getPixelReader(),50, 0, 
-				//70, 60);
-		// press -> released -> change pos
-		/*for (int i = 0 ; i< pos.length ; i++) {
-			if (pos[i] && isPressed) {
-				setY(RenderableHolder.getYP1().get(i));
-				isPressed = false;
-				break;
-			}
-		}*/
-		// press -> change pos -> release
-		for (int i = 0 ; i < pos.length ; i++) {
-			if (pos[i]) {
-				setY(RenderableHolder.getYP1().get(i));
-				break;
-			}
-		}
-		gc.drawImage(RenderableHolder.playerSprite, X ,Y );
 	}
 	
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		// press -> released -> change pos
-		/*if (InputUtility.getKeyPressed(KeyCode.W) && !pos[0] ) {
-			WPressed = true;
-		} else if (InputUtility.getKeyPressed(KeyCode.S) && !pos[pos.length -1] ) {
-			SPressed = true;
-		}
-		if (!InputUtility.getKeyPressed(KeyCode.W) && WPressed ) {
-			pos[currentpos - 1] = true ;
-			pos[currentpos] = false;
-			currentpos -= 1;
-			isPressed = true;
-			WPressed = false;
-		} else if (!InputUtility.getKeyPressed(KeyCode.S) && SPressed) {
-			pos[currentpos + 1] = true;
-			pos[currentpos] = false;
-			currentpos += 1;
-			isPressed = true;
-			SPressed = false;
-		}*/
-		// press -> change pos -> release
 		
-		if (!InputUtility.getKeyPressed(KeyCode.W) && !InputUtility.getKeyPressed(KeyCode.S)) {
-			isPressed = false;
-		}
-		if (InputUtility.getKeyPressed(KeyCode.W) && !pos[0] && !isPressed) {
+		//if (!InputUtility.getKeyPressed(up) && !InputUtility.getKeyPressed(down) && !InputUtility.getKeyPressed(KeyCode.SPACE)) {
+			//isPressed = false;
+		//}
+		
+		if (InputUtility.getKeyPressed(up) && !pos[0] ) {
 			pos[currentpos - 1] = true ;
 			pos[currentpos] = false;
 			currentpos -= 1;
-			isPressed = true;
-		} else if (InputUtility.getKeyPressed(KeyCode.S) && !pos[pos.length -1] && !isPressed ) {
+			
+		} else if (InputUtility.getKeyPressed(down) && !pos[pos.length -1]  ) {
 			pos[currentpos + 1] = true;
 			pos[currentpos] = false;
 			currentpos += 1;
-			isPressed = true;
 		}
+		
+		if (InputUtility.getKeyPressed(releaseMonster)) {
+			releaseMonster();
+		}
+		
+		
+		
+		
 	}
+	
+
+	public boolean isMonsterReady() {
+		if (coins >= deck.getDeckList().get(RenderableHolder.isSelected1).getCost()) {
+			
+			return true;
+		}
+		return false;
+	}
+	
+	public abstract void releaseMonster();
+	
+	public abstract void startCooldownCount();
 	
 	public int getX() {
 		return X;
@@ -107,6 +101,13 @@ public class Player extends Entity{
 		Y = y;
 	}
 
+	public Deck getDeck() {
+		return deck;
+	}
+
+	public void setDeck(Deck deck) {
+		this.deck = deck;
+	}
 	@Override
 	public boolean isVisble() {
 		// TODO Auto-generated method stub

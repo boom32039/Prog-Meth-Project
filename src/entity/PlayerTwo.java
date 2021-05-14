@@ -25,8 +25,8 @@ public class PlayerTwo extends Player {
 		choose1 = KeyCode.MINUS;
 		choose2 = KeyCode.DIGIT0;
 		releaseMonster = KeyCode.LEFT;
-		setX(RenderableHolder.getXP2());
-		setY(RenderableHolder.getYP2().get(currentpos));
+		setX(SimulationManager.getXP2());
+		setY(SimulationManager.getYP2().get(currentpos));
 	}
 	
 	@Override
@@ -46,7 +46,7 @@ public class PlayerTwo extends Player {
 		// press -> change pos -> release
 		for (int i = 0 ; i < pos.length ; i++) {
 			if (pos[i]) {
-				setY(RenderableHolder.getYP2().get(i));
+				setY(SimulationManager.getYP2().get(i));
 				break;
 			}
 		}
@@ -60,11 +60,11 @@ public class PlayerTwo extends Player {
 		// TODO Auto-generated method stub
 		super.update();
 		if (InputUtility.getKeyPressed(choose0)) {
-			RenderableHolder.isSelected2 = 0 ;
+			SimulationManager.setIsSelected2(0);
 		} else if (InputUtility.getKeyPressed(choose1)){
-			RenderableHolder.isSelected2 = 1 ;
+			SimulationManager.setIsSelected2(1);
 		} else if (InputUtility.getKeyPressed(choose2)) {
-			RenderableHolder.isSelected2 = 2 ;
+			SimulationManager.setIsSelected2(2);
 		}
 	}
 
@@ -78,7 +78,7 @@ public class PlayerTwo extends Player {
 	public void releaseMonster() {
 		// TODO Auto-generated method stub
 		if (isMonsterReady()) {
-			release = deck.removeMonster(RenderableHolder.isSelected2);
+			release = deck.removeMonster(SimulationManager.getIsSelected2());
 			//System.out.println(release.getName());
 			coins -= release.getCost();
 			System.out.println("coins" + coins +" "+ "left");
@@ -98,25 +98,6 @@ public class PlayerTwo extends Player {
 		RenderableHolder.setCurrentImage20(RenderableHolder.getAnimalImage2(deck.getDeckList().get(0).getName()));
 		RenderableHolder.setCurrentImage21(RenderableHolder.getAnimalImage2(deck.getDeckList().get(1).getName()));
 		RenderableHolder.setCurrentImage22(RenderableHolder.getAnimalImage2(deck.getDeckList().get(2).getName()));
-	}
-	@Override
-	public void startCooldownCount() {
-		Thread thread = new Thread(() -> {
-			
-			for (int i = 0 ; i < 3; i++) {
-				try {
-					Thread.sleep(1000);
-					cooldown--;
-					RenderableHolder.progress2 += 100/3.0;
-					
-				} catch (InterruptedException e){
-					e.printStackTrace();
-				}
-			} 
-		
-		RenderableHolder.animalReady2 = true;
-		});
-		thread.start();
 	}
 
 	public int getX() {

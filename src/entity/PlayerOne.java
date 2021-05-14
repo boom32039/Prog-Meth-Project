@@ -19,8 +19,8 @@ public class PlayerOne extends Player{
 	public PlayerOne(Monster ...monsters) {
 		
 		super(monsters);
-		setX(RenderableHolder.getXP1());
-		setY(RenderableHolder.getYP1().get(currentpos));
+		setX(SimulationManager.getXP1());
+		setY(SimulationManager.getYP1().get(currentpos));
 		up = KeyCode.W;
 		down = KeyCode.S;
 		choose0 = KeyCode.DIGIT1;
@@ -38,7 +38,7 @@ public class PlayerOne extends Player{
 		
 		for (int i = 0 ; i < pos.length ; i++) {
 			if (pos[i]) {
-				setY(RenderableHolder.getYP1().get(i));
+				setY(SimulationManager.getYP1().get(i));
 				break;
 			}
 		}
@@ -53,11 +53,11 @@ public class PlayerOne extends Player{
 		// TODO Auto-generated method stub
 		super.update();
 		if (InputUtility.getKeyPressed(choose0)) {
-			RenderableHolder.isSelected1 = 0 ;
+			SimulationManager.setIsSelected1(0); 
 		} else if (InputUtility.getKeyPressed(choose1)){
-			RenderableHolder.isSelected1 = 1 ;
+			SimulationManager.setIsSelected1(1); 
 		} else if (InputUtility.getKeyPressed(choose2)) {
-			RenderableHolder.isSelected1 = 2 ;
+			SimulationManager.setIsSelected1(2); 
 		}
 		
 	}
@@ -72,20 +72,12 @@ public class PlayerOne extends Player{
 	public void releaseMonster() {
 		// TODO Auto-generated method stub
 		if (isMonsterReady()) {
-			release = deck.removeMonster(RenderableHolder.isSelected1);
-			//System.out.println(release.getName());
+			
+			release = deck.removeMonster(SimulationManager.getIsSelected1());
 			coins -= release.getCost();
-			//System.out.println("coins" + coins +" "+ "left");
-			deck.addRandomMonster(); 
-			//System.out.println(deck.getMonsterinDeckList(0).getName());
-			//System.out.println(deck.getMonsterinDeckList(1).getName());
-			//System.out.println(deck.getMonsterinDeckList(2).getName());
+			deck.addRandomMonster();
 			deck.getMonsterList().add(release);
-			//System.out.println(deck.getMonsterList().toString());
-			//System.out.println("==========================");
 			checkDeck();
-			SimulationManager.setReleased1(true);
-
 		}
 	}
 
@@ -94,29 +86,9 @@ public class PlayerOne extends Player{
 		RenderableHolder.setCurrentImage10(RenderableHolder.getAnimalImage1(deck.getDeckList().get(0).getName()));
 		RenderableHolder.setCurrentImage11(RenderableHolder.getAnimalImage1(deck.getDeckList().get(1).getName()));
 		RenderableHolder.setCurrentImage12(RenderableHolder.getAnimalImage1(deck.getDeckList().get(2).getName()));
-		
 	}
 	
-	public void startCooldownCount() {
-		
-		Thread thread = new Thread(() -> {
-			
-			for (int i = 0 ; i < 3; i++) {
-				try {
-					Thread.sleep(1000);
-					cooldown--;
-					RenderableHolder.progress1 += 100/3.0;
-				} catch (InterruptedException e){
-					e.printStackTrace();
-				}
-			} 
-		
-		RenderableHolder.animalReady1 = true;
-		
-
-		});
-		thread.start();
-	}
+	
 
 
 	@Override

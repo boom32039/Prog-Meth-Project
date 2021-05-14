@@ -18,7 +18,7 @@ public class AnimalChannel1 extends AnimalChannel {
 	}
 
 	public void checkSelected(){
-		switch (RenderableHolder.isSelected1) {
+		switch (SimulationManager.getIsSelected1()) {
 			case 0:
 				highlight(card0);
 				unhighlight(card1);
@@ -37,20 +37,12 @@ public class AnimalChannel1 extends AnimalChannel {
 		}
 	}
 	 
-	public void arrangeDeck() {
-		if (SimulationManager.isReleased1()) {
-			editImage();
-		}
-		SimulationManager.setReleased1(false);
-	}
 	
 	public void editImage() {
-		card0.getChildren().clear();
-		card1.getChildren().clear();
-		card2.getChildren().clear();
-		card0.getChildren().add(RenderableHolder.getCurrentImage10());
-		card1.getChildren().add(RenderableHolder.getCurrentImage11());
-		card2.getChildren().add(RenderableHolder.getCurrentImage12());
+		
+		card0.getChildren().setAll(RenderableHolder.getCurrentImage10());
+		card1.getChildren().setAll(RenderableHolder.getCurrentImage11());
+		card2.getChildren().setAll(RenderableHolder.getCurrentImage12());
 	}
 	
 	@Override

@@ -64,6 +64,7 @@ public class Main extends Application{
 						//InputUtility.updateInputState();
 					}
 				};
+				
 				AnimationTimer timer = new AnimationTimer() {
 					
 					@Override

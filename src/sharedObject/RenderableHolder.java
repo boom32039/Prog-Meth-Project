@@ -17,6 +17,7 @@ import logic.Field;
 public class RenderableHolder {
 	
 	private static final RenderableHolder instance = new RenderableHolder();
+	
 	private static Map<String,ImageView> map1 = new HashMap<String,ImageView>(); 
 	private static Map<String,ImageView> map2 = new HashMap<String,ImageView>(); 
 	public static Image playerOneSprite;
@@ -39,20 +40,6 @@ public class RenderableHolder {
 	private static ImageView currentImage21;
 	private static ImageView currentImage22;
 
-	public static int ingametime = 180;
-	public static int progress1 = 100;
-	public static int progress2 = 100;
-	public static boolean animalReady1 = true; 
-	public static boolean animalReady2 = true; 
-	public static boolean isReleased1 = false;
-	public static boolean isReleased2 = false;
-	public static int isSelected1;
-	public static int isSelected2;
-	
-	private static int XP1;
-	private static ArrayList<Integer> YP1 = new ArrayList<>();
-	private static int XP2;
-	private static ArrayList<Integer> YP2 = new ArrayList<>();
 	private List<IRenderable> entities;
 	private Comparator<IRenderable> comparator;
 	
@@ -117,34 +104,6 @@ public class RenderableHolder {
 		
 	}
 	
-	
-	public static void setXP1(int X) {
-		XP1 = X;
-	}
-	
-	public static int getXP1() {
-		return XP1;
-	}
-	
-	public static ArrayList<Integer> getYP1() {
-		return YP1;
-	}
-	
-	public static int getXP2() {
-		return XP2;
-	}
-
-	public static void setXP2(int xP2) {
-		XP2 = xP2;
-	}
-
-	public static ArrayList<Integer> getYP2() {
-		return YP2;
-	}
-
-	public static void setYP2(ArrayList<Integer> yP2) {
-		YP2 = yP2;
-	}
 	public static RenderableHolder getInstance() {
 		return instance;
 	}

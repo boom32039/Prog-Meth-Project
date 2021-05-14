@@ -11,6 +11,7 @@ import javafx.scene.input.KeyCode;
 import logic.Deck;
 import logic.PlayerField;
 import sharedObject.RenderableHolder;
+import sharedObject.SimulationManager;
 
 public abstract class Player extends Entity{
 	
@@ -70,9 +71,8 @@ public abstract class Player extends Entity{
 		
 	}
 	
-
 	public boolean isMonsterReady() {
-		if (coins >= deck.getDeckList().get(RenderableHolder.isSelected1).getCost()) {
+		if (coins >= deck.getDeckList().get(SimulationManager.getIsSelected1()).getCost()) {
 			
 			return true;
 		}
@@ -80,8 +80,6 @@ public abstract class Player extends Entity{
 	}
 	
 	public abstract void releaseMonster();
-	
-	public abstract void startCooldownCount();
 	
 	public int getX() {
 		return X;

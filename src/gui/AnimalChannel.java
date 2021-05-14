@@ -77,15 +77,13 @@ public abstract class AnimalChannel extends HBox {
 	public void unhighlight(StackPane card) {
 		card.setBackground(new Background(new BackgroundFill(Color.GRAY,null,null)));
 	}
-	
+	 
 	public abstract void checkSelected();
-	
-	public abstract void arrangeDeck();
 	
 	public abstract void editImage();
 	
 	public void paintComponent() {
-		arrangeDeck();
+		editImage();
 		checkSelected();
 		
 	}

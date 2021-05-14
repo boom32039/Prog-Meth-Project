@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
+import sharedObject.SimulationManager;
 
 public class PlayerOneField extends PlayerField {
 	
@@ -12,10 +13,10 @@ public class PlayerOneField extends PlayerField {
 		X = width /20;
 		Y = 3 * (height /15) + 2*(height/8);
 		for (int i = 0 ; i <5 ; i++) {
-			RenderableHolder.getYP1().add((i+1)*(this.height/15) + i*(this.height/8) );
+			SimulationManager.getYP1().add((i+1)*(this.height/15) + i*(this.height/8) );
 		}
 		
-		RenderableHolder.setXP1(X);
+		SimulationManager.setXP1(X);
 	}
 	
 	public int getZ() {

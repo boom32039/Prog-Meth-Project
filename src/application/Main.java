@@ -1,8 +1,13 @@
 package application;
 
 import Drawing.GameScreen;
+<<<<<<< HEAD
 import gui.GamePane;
 import gui.HowToPlayPane;
+||||||| 1eb6486
+=======
+import gui.HowToPlayPane;
+>>>>>>> c2ec045c246a4935b07daa70e009d0a0b65ccdd8
 import gui.MenuPane;
 import gui.PausePane;
 import gui.TimePane;
@@ -34,6 +39,7 @@ public class Main extends Application{
 		// TODO Auto-generated method stub
 		// Intialize main menu
 		MenuPane menu = new MenuPane();
+		HowToPlayPane howToPlay = new HowToPlayPane();
 		Scene menuscene = new Scene(menu, 800 ,600);
 		stage.setScene(menuscene);
 		stage.setTitle("Animal Fight!!");
@@ -90,6 +96,7 @@ public class Main extends Application{
 			timer.start();
 			}
 		});
+<<<<<<< HEAD
 		//set HowToPlay button 
 		menu.getHowToPlayButton().setOnAction(new EventHandler<ActionEvent>() {
 			@Override
@@ -107,6 +114,31 @@ public class Main extends Application{
 						start(stage);
 					}
 				});
+||||||| 1eb6486
+			//set option button
+			menu.getoptionButton().setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+						
+=======
+			//set option button
+			menu.getHowToPlayButton().setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					HowToPlayPane howToPlay = new HowToPlayPane();
+					Scene HowToPlayScene = new Scene(howToPlay, 800 ,600);
+					stage.setScene(HowToPlayScene);
+					stage.setTitle("How To Play");
+					stage.show();		
+					
+					//set option button
+					howToPlay.getBackButton().setOnAction(new EventHandler<ActionEvent>() {
+						@Override
+						public void handle(ActionEvent event) {
+							start(stage);   
+					}
+				});
+>>>>>>> c2ec045c246a4935b07daa70e009d0a0b65ccdd8
 			}
 		});
 				
@@ -117,6 +149,7 @@ public class Main extends Application{
 				stage.close();
 			}
 		});
+		
 	}
 	
 	

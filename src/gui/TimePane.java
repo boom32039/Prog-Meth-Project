@@ -27,10 +27,9 @@ public class TimePane extends HBox {
 	public TimePane(int width , int height){
 		
 		this.setWidth(width);
-		//this.setHeight(height);
 		this.setPrefHeight(height);
 		//this.setBackground(new Background(new BackgroundFill(Color.BLUE,null,null)));
-		this.setStyle("-fx-background-image: url('wallbackground.jpg');");
+		this.setStyle("-fx-background-image: url('gameresultBackground.jpg');");
 
 		animalchannel1 = new AnimalChannel1(width*3/10 , height);
 		animalchannel2 = new AnimalChannel2(width*3/10, height);

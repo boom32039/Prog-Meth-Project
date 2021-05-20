@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritableImage;
 import javafx.scene.media.AudioClip;
+import javafx.scene.text.Font;
 import logic.Field;
 
 public class RenderableHolder {
@@ -20,10 +21,15 @@ public class RenderableHolder {
 	
 	private static Map<String,ImageView> map1 = new HashMap<String,ImageView>(); 
 	private static Map<String,ImageView> map2 = new HashMap<String,ImageView>(); 
+	
 	public static Image playerOneSprite;
 	public static Image playerTwoSprite;
 	public static Image backgroundimg;
+	public static Image menubackground;
 	public static Image wallbackground;
+	public static Image gameresultBackground;
+	
+	public static ArrayList<Image> gunshotSpriteList;
 	
 	private static Image adventurericon;
 	private static Image knighticon;
@@ -58,7 +64,7 @@ public class RenderableHolder {
 	
 	public static void loadResource() {
 		
-		playerOneSprite = new Image(ClassLoader.getSystemResource("knightSprite/Idle (1).png").toString() , 80 , 600/8 , false , true);
+		playerOneSprite = new Image(ClassLoader.getSystemResource("adventurerSprite/Idle (1).png").toString() , 80 , 600/8 , false , true);
 		playerTwoSprite = new Image(ClassLoader.getSystemResource("knightSprite/Idle (1).png").toString() , 80 , 600/8 , true , true);
 		
 		adventurericon = new Image(ClassLoader.getSystemResource("adventurerSprite/Idle (1).png").toString() , 56 , 65 , false , true);
@@ -67,11 +73,18 @@ public class RenderableHolder {
 		santaicon = new Image(ClassLoader.getSystemResource("santaSprite/Idle (1).png").toString() , 56 , 65 , false , true);
 		roboticon = new Image(ClassLoader.getSystemResource("robotSprite/Idle (1).png").toString() , 56 , 65 , false , true);
 		
+		gunshotSpriteList = new ArrayList<Image>();
+		gunshotSpriteList.add(new Image(ClassLoader.getSystemResource("adventurerSprite/Shoot (1).png").toString() , 80 , 600/8 , false , true));
+		gunshotSpriteList.add(new Image(ClassLoader.getSystemResource("adventurerSprite/Shoot (2).png").toString() , 80 , 600/8 , false , true));
+		gunshotSpriteList.add(new Image(ClassLoader.getSystemResource("adventurerSprite/Shoot (3).png").toString() , 80 , 600/8 , false , true));
+		
 		backgroundimg = new Image(ClassLoader.getSystemResource("background.jpg").toString() );
 		PixelReader croppedBackground = backgroundimg.getPixelReader();
 		background = new WritableImage(croppedBackground, 0, (int) backgroundimg.getHeight()/5+100 , 800, 500);
+		menubackground = new Image(ClassLoader.getSystemResource("menubackground.jpg").toString() );
+		wallbackground = new Image(ClassLoader.getSystemResource("gameresultBackground.jpg").toString() , 800 , 65 , false , true);
+		gameresultBackground = new Image(ClassLoader.getSystemResource("gameresultBackground.png").toString());
 		
-		wallbackground = new Image(ClassLoader.getSystemResource("wallbackground.jpg").toString() , 800 , 65 , false , true);
 	}
 	
 	public static void loadMap() {

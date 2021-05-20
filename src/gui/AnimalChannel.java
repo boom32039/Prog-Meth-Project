@@ -19,6 +19,7 @@ import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Transform;
 import javafx.scene.transform.Translate;
 import sharedObject.RenderableHolder;
+import sharedObject.SimulationManager;
 
 public abstract class AnimalChannel extends HBox {
 	
@@ -26,6 +27,7 @@ public abstract class AnimalChannel extends HBox {
 	protected Label coinschannel;
 	protected StackPane card0 , card1 ,card2 ;
 	protected boolean change = false;
+	
 	
 	public AnimalChannel(double width, double height) {
 
@@ -65,7 +67,7 @@ public abstract class AnimalChannel extends HBox {
 		
 		coinschannel.setPrefWidth(width * 0.3);
 		//coinschannel.setBackground(new Background(new BackgroundFill(Color.BISQUE,null,null)));
-		coinschannel.setFont(new Font("Verdana", 25));
+		SimulationManager.setFont(coinschannel, 30);
 		coinschannel.setAlignment(Pos.CENTER);
 		
 	}

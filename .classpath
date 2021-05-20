@@ -5,7 +5,8 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="Font/" kind="src" path="src"/>
 	<classpathentry kind="src" path="res"/>
+	<classpathentry kind="src" path="src/Font"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

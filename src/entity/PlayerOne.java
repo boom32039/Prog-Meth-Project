@@ -21,12 +21,14 @@ public class PlayerOne extends Player{
 		super(monsters);
 		setX(SimulationManager.getXP1());
 		setY(SimulationManager.getYP1().get(currentpos));
+		currentSprite = RenderableHolder.playerOneSprite;
 		up = KeyCode.W;
 		down = KeyCode.S;
 		choose0 = KeyCode.DIGIT1;
 		choose1 = KeyCode.DIGIT2;
 		choose2 = KeyCode.DIGIT3;
 		releaseMonster = KeyCode.SPACE;
+		shoot = KeyCode.D;
 		/*System.out.println("start coins = " + coins);
 		System.out.println("deck has " + deck.getDeckList().get(0).getName() 
 				+" " + deck.getDeckList().get(1).getName() +" " + deck.getDeckList().get(2).getName());
@@ -42,7 +44,7 @@ public class PlayerOne extends Player{
 				break;
 			}
 		}
-		gc.drawImage(RenderableHolder.playerOneSprite, X ,Y );
+		gc.drawImage(currentSprite, X ,Y );
 	}
 	
 	
@@ -67,7 +69,7 @@ public class PlayerOne extends Player{
 		// TODO Auto-generated method stub
 		return super.isMonsterReady();
 	}
-
+	
 	@Override
 	public void releaseMonster() {
 		// TODO Auto-generated method stub

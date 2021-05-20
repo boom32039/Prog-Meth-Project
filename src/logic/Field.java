@@ -4,6 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.WritableImage;
 import sharedObject.IRenderable;
 import sharedObject.RenderableHolder;
+import sharedObject.SimulationManager;
 import javafx.scene.paint.Color;
 
 public class Field implements IRenderable {
@@ -14,8 +15,9 @@ public class Field implements IRenderable {
 
 	@Override
 	public void draw(GraphicsContext gc) {
-		gc.setFill(Color.GREEN);
+		
 		gc.drawImage(RenderableHolder.background, 0 , 0 ,gc.getCanvas().getWidth() , gc.getCanvas().getHeight());
+		
 	}
 
 	@Override

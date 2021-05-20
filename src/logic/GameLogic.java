@@ -3,6 +3,7 @@ package logic;
 import java.util.ArrayList;
 import java.util.List;
 
+import entity.Barrel;
 import entity.Entity;
 import entity.PlayerOne;
 import entity.PlayerTwo;
@@ -13,6 +14,7 @@ import entity.base.Santa;
 import entity.base.Adventurer;
 import entity.base.Knight;
 import sharedObject.RenderableHolder;
+import sharedObject.SimulationManager;
 
 public class GameLogic {
 	
@@ -25,12 +27,14 @@ public class GameLogic {
 	private Field field2;
 	private PlayerField playerField2;
 	
-	private Monster adventurer, knight , ninja , santa  , robot  ;
+	private Monster adventurer, knight , ninja , santa  , robot ;
 	
-
-	public GameLogic(){
+	private Barrel barrel;
+	
+	public GameLogic() {
 		
 		gameObjectContainer = new ArrayList<Entity>();
+		setupSharedField();
 		
 		adventurer = new Adventurer("Adventurer" , 300 , 100 , 400 , 5);
 		knight = new Knight("Knight" ,400 , 80 , 50 , 10 );
@@ -44,6 +48,8 @@ public class GameLogic {
 		playerField2 = new PlayerTwoField(800, 500);
 		playerOne = new PlayerOne(knight , adventurer , ninja ,santa , robot );
 		playerTwo = new PlayerTwo(knight , adventurer , ninja ,santa , robot );
+		
+		
 		
 		RenderableHolder.setCurrentImage10(RenderableHolder.getAnimalImage1(knight.getName()));
 		RenderableHolder.setCurrentImage11(RenderableHolder.getAnimalImage1(adventurer.getName()));
@@ -61,11 +67,12 @@ public class GameLogic {
 		
 		field2 = new Field();
 		
-		
 		RenderableHolder.getInstance().add(field2);
 		RenderableHolder.getInstance().add(playerField2);
 		addNewObject(playerTwo);
 		
+		barrel = new Barrel();
+		RenderableHolder.getInstance().add(barrel);
 		
 	}
 	
@@ -74,9 +81,50 @@ public class GameLogic {
 		RenderableHolder.getInstance().add(entity);
 	}
 
+	public void setupSharedField(){
+		RenderableHolder.getInstance().getEntities().clear();
+		SimulationManager.setGameEnd(false);
+		SimulationManager.setBackToMenu(false);
+	
+		SimulationManager.setIsSelected1(0);
+		SimulationManager.setPoints1(0);
+		
+		SimulationManager.setIsSelected2(0);
+		SimulationManager.setPoints2(0);
+	}
+	
 	public void logicUpdate(){
-		playerOne.update();
-		playerTwo.update();
+		checkGameEnd();
+		if (!SimulationManager.isGameEnd()) {
+			playerOne.update();
+			playerTwo.update();
+		} 
+		
+		barrel.update();
+	}
+	
+	public void checkGameEnd() {
+		// ingametime = 0
+		if (SimulationManager.getIngametime() == 0) {
+			SimulationManager.setGameEnd(true);
+			if (SimulationManager.getPoints1() == SimulationManager.getPoints2()) {
+				SimulationManager.setGameresult("DRAW!!");
+			} else if (SimulationManager.getPoints1() > SimulationManager.getPoints2()) {
+				SimulationManager.setGameresult("PLAYER 1 WIN!!");
+			} else if (SimulationManager.getPoints1() < SimulationManager.getPoints2()) {
+				SimulationManager.setGameresult("PLAYER 2 WIN!!");
+			}
+			SimulationManager.setGameEnd(true);
+		// player 1 win
+		} else if (SimulationManager.getPoints1() == 3) {
+			SimulationManager.setGameresult("PLAYER 1 WIN!!");
+			SimulationManager.setGameEnd(true);
+		// player 2 win
+		} else if (SimulationManager.getPoints2() == 3) {
+			SimulationManager.setGameresult("PLAYER 2 WIN!!");
+			SimulationManager.setGameEnd(true);
+		}
+		
 	}
 
 }

@@ -6,6 +6,7 @@ import entity.base.Monster;
 import input.InputUtility;
 import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyCode;
 import logic.Deck;
@@ -25,11 +26,13 @@ public abstract class Player extends Entity{
 	protected KeyCode choose0;
 	protected KeyCode choose1;
 	protected KeyCode choose2;
+	protected KeyCode shoot;
 	protected int points;
 	protected int coins;
 	protected int cooldown; 
 	protected Monster release;
 	protected Deck deck;
+	protected Image currentSprite;
 	
 	public Player(Monster ...monsters) {
 		
@@ -67,8 +70,6 @@ public abstract class Player extends Entity{
 		}
 		
 		
-		
-		
 	}
 	
 	public boolean isMonsterReady() {
@@ -78,6 +79,8 @@ public abstract class Player extends Entity{
 		}
 		return false;
 	}
+	
+	
 	
 	public abstract void releaseMonster();
 	

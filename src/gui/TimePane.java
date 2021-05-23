@@ -1,50 +1,72 @@
 package gui;
 
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import sharedObject.RenderableHolder;
 import sharedObject.SimulationManager;
 
 public class TimePane extends HBox {
-	
-	private TimeChannel timechannel;
-	private AnimalChannel1 animalchannel1;
-	private AnimalChannel2 animalchannel2;
-	private PointChannel pointchannel1;
-	private PointChannel pointchannel2;
-	
-	public TimePane(int width , int height){
-		
-		this.setWidth(width);
+
+	// ------------------------------ FIELD ------------------------------ //
+
+	private Label timeChannel;
+	private Label pointChannel1, pointChannel2;
+	private MonsterChannel1 monsterChannel1;
+	private MonsterChannel2 monsterChannel2;
+
+	// ------------------------------ CONSTRUCTOR ------------------------------ //
+
+	public TimePane(int width, int height) {
+
+		// initialize all child node
+		this.setPrefWidth(width);
 		this.setPrefHeight(height);
-		//this.setBackground(new Background(new BackgroundFill(Color.BLUE,null,null)));
 		this.setStyle("-fx-background-image: url('gameresultBackground.jpg');");
 
-		animalchannel1 = new AnimalChannel1(width*3/10 , height);
-		animalchannel2 = new AnimalChannel2(width*3/10, height);
-		pointchannel1 = new PointChannel(width/10, height);
-		pointchannel2 = new PointChannel(width/10, height);
-		timechannel = new TimeChannel(Integer.toString(SimulationManager.getIngametime()), width/5, height);
-		
-		this.getChildren().addAll(animalchannel1 , pointchannel1, timechannel,pointchannel2, animalchannel2);
-		
+		initMonsterChannel(width * 3 / 10, height);
+		initTimeChannel(width / 5, height);
+		initPointChannel(width / 10, height);
+		initPointChannel(width / 10, height);
+		this.getChildren().addAll(monsterChannel1, pointChannel1, timeChannel, pointChannel2, monsterChannel2);
+
 	}
-	
+
+	// ------------------------------ METHOD ------------------------------ //
+
 	public void paintComponent() {
-		timechannel.setText(Integer.toString(SimulationManager.getIngametime()));
-		animalchannel1.paintComponent();
-		animalchannel2.paintComponent();
+		// displays all components in timepane
+		timeChannel.setText(Integer.toString(SimulationManager.getIngametime()));
+		monsterChannel1.paintComponent();
+		monsterChannel2.paintComponent();
+		pointChannel1.setText(Integer.toString(SimulationManager.getPoints1()));
+		pointChannel2.setText(Integer.toString(SimulationManager.getPoints2()));
 	}
-	
+
+	public void initMonsterChannel(int width, int height) {
+		// initialize monsterChannel1 , monsterChannel2
+		monsterChannel1 = new MonsterChannel1(width, height);
+		monsterChannel2 = new MonsterChannel2(width, height);
+	}
+
+	public void initTimeChannel(int width, int height) {
+		// initialize TimeChannnel
+		timeChannel = new Label(Integer.toString(SimulationManager.getIngametime()));
+		timeChannel.setAlignment(Pos.CENTER);
+		timeChannel.setPrefSize(width, height);
+		SimulationManager.setFont(((Label) timeChannel), 60);
+	}
+
+	public void initPointChannel(int width, int height) {
+		// initialize pointChannnel1 , pointChannnel2
+		pointChannel1 = new Label();
+		pointChannel1.setAlignment(Pos.CENTER);
+		pointChannel1.setPrefSize(width, height);
+		SimulationManager.setFont(((Label) pointChannel1), 50);
+
+		pointChannel2 = new Label();
+		pointChannel2.setAlignment(Pos.CENTER);
+		pointChannel2.setPrefSize(width, height);
+		SimulationManager.setFont(((Label) pointChannel2), 50);
+	}
+
 }

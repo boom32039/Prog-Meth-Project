@@ -1,18 +1,23 @@
 package logic;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 import sharedObject.IRenderable;
-import sharedObject.RenderableHolder;
 
 public abstract class PlayerField implements IRenderable {
 
-	protected int X, Y, Z = -5000, width, height;
+	// ------------------------------ FIELD ------------------------------ //
 
-	public PlayerField(int width , int height) {
+	protected int X, Z, width, height;
+
+	// ------------------------------ CONSTRUCTOR ------------------------------ //
+
+	public PlayerField(int width, int height) {
 		this.width = width;
 		this.height = height;
+		this.Z = -5000;
 	}
+
+	// ------------------------------ METHOD ------------------------------ //
 
 	public int getZ() {
 		return Z;
@@ -20,9 +25,4 @@ public abstract class PlayerField implements IRenderable {
 
 	public abstract void draw(GraphicsContext gc);
 
-	@Override
-	public boolean isVisble() {
-		// TODO Auto-generated method stub
-		return true;
-	}
 }

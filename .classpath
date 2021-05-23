@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry excluding="Font/" kind="src" path="src"/>
 	<classpathentry kind="src" path="res"/>
-	<classpathentry kind="src" path="src/Font"/>
+	<classpathentry kind="src" path="sound"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

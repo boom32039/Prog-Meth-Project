@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="false" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="gui.HowToPlayPane" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/HowToPlayPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="416" width="215" x="541" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="gui.MenuPane" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/MenuPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="296" width="227" x="796" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="gui.GameScreen" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/GameScreen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="227" x="1063" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="logic.Deck" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/logic/Deck.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="279" x="1330" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="logic.PlayerOneField" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/logic/PlayerOneField.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="219" x="1838" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="gui.TimePane" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/TimePane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="276" width="278" x="1649" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="sharedObject.SimulationManager" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/sharedObject/SimulationManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="2156" width="399" x="2228" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="entity.base.Robot" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/base/Robot.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="176" width="255" x="5242" y="3671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="entity.PlayerTwo" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/PlayerTwo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="219" x="4724" y="3671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="input.InputUtility" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/input/InputUtility.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="302" x="2667" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="logic.GameLogic" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/logic/GameLogic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="456" width="210" x="3009" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="entity.base.Adventurer" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/base/Adventurer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="288" x="5537" y="3671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="gui.MonsterChannel1" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/MonsterChannel1.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="256" x="4910" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="entity.Player" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="718" width="284" x="5502" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="entity.base.Knight" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/base/Knight.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="257" x="5865" y="3671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="gui.GameResult" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/GameResult.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="158" x="3259" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="sharedObject.RenderableHolder" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/sharedObject/RenderableHolder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="1376" width="300" x="3457" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="logic.PlayerTwoField" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/logic/PlayerTwoField.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="219" x="2097" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="gui.MonsterChannel2" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/MonsterChannel2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="256" x="5206" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="application.Main" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/application/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="496" width="246" x="3797" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="entity.base.Santa" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/base/Santa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="254" x="6162" y="3671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="logic.PlayerField" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/logic/PlayerField.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="217" width="221" x="1967" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="gui.QuitPane" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/QuitPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="171" x="4083" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="entity.Barrel" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/Barrel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="536" width="230" x="6474" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="entity.base.Ninja" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/base/Ninja.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="248" x="6456" y="3671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="exception.UnselectedException" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/exception/UnselectedException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="224" x="4294" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="sharedObject.ImageAnimationManager" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/sharedObject/ImageAnimationManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="4796" width="377" x="4558" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="gui.MonsterChannel" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/MonsterChannel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="378" width="253" x="5253" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="logic.Field" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/logic/Field.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="136" width="219" x="6215" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="entity.base.Monster" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/base/Monster.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="816" width="349" x="5826" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="gui.GamePane" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/GamePane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="236" width="238" x="4975" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="entity.PlayerOne" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/PlayerOne.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="216" width="219" x="4983" y="3671"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="33" language="java" name="sharedObject.IRenderable" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/sharedObject/IRenderable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="219" x="6215" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="34" language="java" name="gui.PreGamePane" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/gui/PreGamePane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="736" width="466" x="5546" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="entity.Entity" project="Final_Project2_(coin)" 
+    file="/Final_Project2_(coin)/src/entity/Entity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="157" width="123" x="6052" y="-2021"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="39">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <realization id="40">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <generalization id="41">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <realization id="42">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <generalization id="43">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <generalization id="45">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="22"/>  
+  </generalization>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="22"/>  
+  </generalization>  
+  <generalization id="47">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <realization id="49">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <generalization id="50">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <generalization id="51">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

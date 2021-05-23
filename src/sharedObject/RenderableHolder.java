@@ -11,34 +11,37 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.WritableImage;
-import javafx.scene.media.AudioClip;
-import javafx.scene.text.Font;
-import logic.Field;
 
 public class RenderableHolder {
-	
+
+	// ------------------------------ FIELD ------------------------------ //
+
 	private static final RenderableHolder instance = new RenderableHolder();
-	
-	private static Map<String,ImageView> map1 = new HashMap<String,ImageView>(); 
-	private static Map<String,ImageView> map2 = new HashMap<String,ImageView>(); 
-	
-	public static Image playerOneSprite;
-	public static Image playerTwoSprite;
-	public static Image backgroundimg;
-	public static Image menubackground;
-	public static Image wallbackground;
-	public static Image gameresultBackground;
-	
-	public static ArrayList<Image> gunshotSpriteList;
-	
-	private static Image adventurericon;
-	private static Image knighticon;
-	private static Image ninjaicon;
-	private static Image santaicon;
-	private static Image roboticon;
-	
-	public static WritableImage background;
-	
+
+	private static Map<String, ImageView> map1 = new HashMap<String, ImageView>();
+	private static Map<String, ImageView> map2 = new HashMap<String, ImageView>();
+
+	private static Image playerOneSprite;
+	private static Image playerTwoSprite;
+	private static Image backgroundImg;
+	private static Image wallBackground;
+	private static Image menuBackground;
+	private static Image gameResultBackground;
+
+	private static Image barrel;
+	private static Image switchOn;
+	private static Image switchOff;
+	private static Image doorOpen;
+	private static Image doorClose;
+
+	private static Image adventurerIcon;
+	private static Image knightIcon;
+	private static Image ninjaIcon;
+	private static Image santaIcon;
+	private static Image robotIcon;
+
+	private static WritableImage background;
+
 	private static ImageView currentImage10;
 	private static ImageView currentImage11;
 	private static ImageView currentImage12;
@@ -48,12 +51,16 @@ public class RenderableHolder {
 
 	private List<IRenderable> entities;
 	private Comparator<IRenderable> comparator;
-	
+
 	static {
 		loadResource();
+		ImageAnimationManager.loadAnimationImage();
 	}
 
+	// ------------------------------ CONSTRUCTOR ------------------------------ //
+
 	public RenderableHolder() {
+		// initialize entities and comparator
 		entities = new ArrayList<IRenderable>();
 		comparator = (IRenderable o1, IRenderable o2) -> {
 			if (o1.getZ() > o2.getZ())
@@ -61,62 +68,71 @@ public class RenderableHolder {
 			return -1;
 		};
 	}
-	
+
+	// ------------------------------ METHOD ------------------------------ //
+
 	public static void loadResource() {
-		
-		playerOneSprite = new Image(ClassLoader.getSystemResource("adventurerSprite/Idle (1).png").toString() , 80 , 600/8 , false , true);
-		playerTwoSprite = new Image(ClassLoader.getSystemResource("knightSprite/Idle (1).png").toString() , 80 , 600/8 , true , true);
-		
-		adventurericon = new Image(ClassLoader.getSystemResource("adventurerSprite/Idle (1).png").toString() , 56 , 65 , false , true);
-		knighticon = new Image(ClassLoader.getSystemResource("knightSprite/Idle (1).png").toString() , 56 , 65 , false , true);
-		ninjaicon = new Image(ClassLoader.getSystemResource("ninjaSprite/Idle__000.png").toString() , 56 , 65 , false , true);
-		santaicon = new Image(ClassLoader.getSystemResource("santaSprite/Idle (1).png").toString() , 56 , 65 , false , true);
-		roboticon = new Image(ClassLoader.getSystemResource("robotSprite/Idle (1).png").toString() , 56 , 65 , false , true);
-		
-		gunshotSpriteList = new ArrayList<Image>();
-		gunshotSpriteList.add(new Image(ClassLoader.getSystemResource("adventurerSprite/Shoot (1).png").toString() , 80 , 600/8 , false , true));
-		gunshotSpriteList.add(new Image(ClassLoader.getSystemResource("adventurerSprite/Shoot (2).png").toString() , 80 , 600/8 , false , true));
-		gunshotSpriteList.add(new Image(ClassLoader.getSystemResource("adventurerSprite/Shoot (3).png").toString() , 80 , 600/8 , false , true));
-		
-		backgroundimg = new Image(ClassLoader.getSystemResource("background.jpg").toString() );
-		PixelReader croppedBackground = backgroundimg.getPixelReader();
-		background = new WritableImage(croppedBackground, 0, (int) backgroundimg.getHeight()/5+100 , 800, 500);
-		menubackground = new Image(ClassLoader.getSystemResource("menubackground.jpg").toString() );
-		wallbackground = new Image(ClassLoader.getSystemResource("gameresultBackground.jpg").toString() , 800 , 65 , false , true);
-		gameresultBackground = new Image(ClassLoader.getSystemResource("gameresultBackground.png").toString());
-		
+		// initialize images
+		playerOneSprite = new Image(ClassLoader.getSystemResource("playerOneSprite.png").toString(), 80, 600 / 8, false,
+				true);
+		playerTwoSprite = new Image(ClassLoader.getSystemResource("playerTwoSprite.png").toString(), 70, 75, true,
+				true);
+
+		adventurerIcon = new Image(ClassLoader.getSystemResource("Adventurer.PNG").toString(), 56, 65, false, true);
+		knightIcon = new Image(ClassLoader.getSystemResource("Knight.PNG").toString(), 56, 65, false, true);
+		ninjaIcon = new Image(ClassLoader.getSystemResource("Ninja.PNG").toString(), 56, 65, false, true);
+		santaIcon = new Image(ClassLoader.getSystemResource("Santa.PNG").toString(), 56, 65, false, true);
+		robotIcon = new Image(ClassLoader.getSystemResource("Robot.PNG").toString(), 56, 65, false, true);
+
+		backgroundImg = new Image(ClassLoader.getSystemResource("background.jpg").toString());
+		PixelReader croppedBackground = backgroundImg.getPixelReader();
+		background = new WritableImage(croppedBackground, 0, (int) backgroundImg.getHeight() / 5 + 100, 800, 500);
+
+		menuBackground = new Image(ClassLoader.getSystemResource("menubackground.jpg").toString());
+		wallBackground = new Image(ClassLoader.getSystemResource("gameresultBackground.jpg").toString(), 800, 65, false,
+				true);
+		gameResultBackground = new Image(ClassLoader.getSystemResource("gameresultBackground.png").toString());
+
+		barrel = new Image(ClassLoader.getSystemResource("Objects/Barrel (1).png").toString());
+		switchOn = new Image(ClassLoader.getSystemResource("Objects/Switch (1).png").toString());
+		switchOff = new Image(ClassLoader.getSystemResource("Objects/Switch (2).png").toString());
+		doorOpen = new Image(ClassLoader.getSystemResource("Objects/DoorOpen.png").toString());
+		doorClose = new Image(ClassLoader.getSystemResource("Objects/DoorLocked.png").toString());
+
 	}
-	
+
 	public static void loadMap() {
-		
-		map1.put("Adventurer", new ImageView(adventurericon));
-		map1.put("Knight", new ImageView(knighticon));
-		map1.put("Ninja", new ImageView(ninjaicon));
-		map1.put("Robot", new ImageView(roboticon));
-		map1.put("Santa", new ImageView(santaicon));
-		
-		map2.put("Adventurer", new ImageView(adventurericon));
-		map2.put("Knight", new ImageView(knighticon));
-		map2.put("Ninja", new ImageView(ninjaicon));
-		map2.put("Robot", new ImageView(roboticon));
-		map2.put("Santa", new ImageView(santaicon));
-		
+		// initialize map1 ,map2
+		map1.put("Adventurer", new ImageView(adventurerIcon));
+		map1.put("Knight", new ImageView(knightIcon));
+		map1.put("Ninja", new ImageView(ninjaIcon));
+		map1.put("Robot", new ImageView(robotIcon));
+		map1.put("Santa", new ImageView(santaIcon));
+
+		map2.put("Adventurer", new ImageView(adventurerIcon));
+		map2.put("Knight", new ImageView(knightIcon));
+		map2.put("Ninja", new ImageView(ninjaIcon));
+		map2.put("Robot", new ImageView(robotIcon));
+		map2.put("Santa", new ImageView(santaIcon));
+
 	}
-	
-	public static ImageView getAnimalImage1(String name) {
+
+	// ------------------------------ GETTER,SETTER ------------------------------ //
+
+	public static ImageView getMonsterImage1(String name) {
 		return map1.get(name);
 	}
-	
-	public static ImageView getAnimalImage2(String name) {
+
+	public static ImageView getMonsterImage2(String name) {
 		return map2.get(name);
 	}
-	
+
 	public void add(IRenderable entity) {
 		entities.add(entity);
 		Collections.sort(entities, comparator);
-		
+
 	}
-	
+
 	public static RenderableHolder getInstance() {
 		return instance;
 	}
@@ -172,7 +188,73 @@ public class RenderableHolder {
 	public static void setCurrentImage22(ImageView currentImage22) {
 		RenderableHolder.currentImage22 = currentImage22;
 	}
-	
-	
+
+	public static Image getBarrel() {
+		return barrel;
+	}
+
+	public static void setBarrel(Image barrel) {
+		RenderableHolder.barrel = barrel;
+	}
+
+	public static Image getSwitchOn() {
+		return switchOn;
+	}
+
+	public static void setSwitchOn(Image switchOn) {
+		RenderableHolder.switchOn = switchOn;
+	}
+
+	public static Image getSwitchOff() {
+		return switchOff;
+	}
+
+	public static void setSwitchOff(Image switchOff) {
+		RenderableHolder.switchOff = switchOff;
+	}
+
+	public static Image getDoorOpen() {
+		return doorOpen;
+	}
+
+	public static void setDoorOpen(Image doorOpen) {
+		RenderableHolder.doorOpen = doorOpen;
+	}
+
+	public static Image getDoorClose() {
+		return doorClose;
+	}
+
+	public static void setDoorClose(Image doorClose) {
+		RenderableHolder.doorClose = doorClose;
+	}
+
+	public static Image getPlayerOneSprite() {
+		return playerOneSprite;
+	}
+
+	public static Image getPlayerTwoSprite() {
+		return playerTwoSprite;
+	}
+
+	public static Image getBackgroundImg() {
+		return backgroundImg;
+	}
+
+	public static Image getWallBackground() {
+		return wallBackground;
+	}
+
+	public static Image getMenuBackground() {
+		return menuBackground;
+	}
+
+	public static Image getGameResultBackground() {
+		return gameResultBackground;
+	}
+
+	public static WritableImage getBackground() {
+		return background;
+	}
 
 }

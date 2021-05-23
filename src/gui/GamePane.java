@@ -1,45 +1,50 @@
 package gui;
 
-import Drawing.GameScreen;
-import javafx.geometry.Insets;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import sharedObject.SimulationManager;
 
 public class GamePane extends VBox {
-	
-	TimePane timepane;
-	StackPane gameScreenStack;
-	GameScreen gamescreen;
-	PausePane pausepane;
-	GameResult gameresult;
-	
-	public GamePane(int width , int height) {
-		super(0);
-		this.timepane = new TimePane(width , 60);
-		this.gameScreenStack = new StackPane();
-		this.pausepane = new PausePane(width , 45);
-		
-		this.gamescreen = new GameScreen(width , height-100);
-		this.gameresult = new GameResult(width/2 , (height-100)/2);
-		gameScreenStack.getChildren().add(gamescreen);
-		this.getChildren().addAll(timepane , gameScreenStack, pausepane);
-		this.gamescreen.setFocusTraversable(true);
-		
+
+	// ------------------------------ FIELD ------------------------------ //
+
+	private TimePane timePane;
+	private StackPane gamescreenStack;
+	private GameScreen gamescreen;
+	private QuitPane quitPane;
+	private GameResult gameResult;
+
+	// ------------------------------ CONSTRUCTOR ------------------------------ //
+
+	public GamePane(int width, int height) {
+		// initialize all fields
+		timePane = new TimePane(width, 60);
+		gamescreenStack = new StackPane();
+		gamescreen = new GameScreen(width, height - 100);
+		gamescreen.setFocusTraversable(true);
+		gameResult = new GameResult(width / 2, (height - 100) / 2);
+		gamescreenStack.getChildren().add(gamescreen);
+		quitPane = new QuitPane(width, 45);
+		getChildren().addAll(timePane, gamescreenStack, quitPane);
+
 	}
-	
+
+	// ------------------------------ METHOD ------------------------------ //
+
 	public void paintComponent() {
-		timepane.paintComponent();
+		// paint all component of gameplay and check if game is over
+		timePane.paintComponent();
 		gamescreen.paintComponent();
-		paintGameResult();
-	}
-	
-	public void paintGameResult() {
 		if (SimulationManager.isGameEnd()) {
-			gameScreenStack.getChildren().setAll(gamescreen , gameresult);
+			paintGameResult();
 		}
-		
-		
+
 	}
-	
+
+	public void paintGameResult() {
+		// show game result pane
+		this.gameResult.getWinner().setText(SimulationManager.getGameResult());
+		gamescreenStack.getChildren().setAll(this.gamescreen, this.gameResult);
+
+	}
 }

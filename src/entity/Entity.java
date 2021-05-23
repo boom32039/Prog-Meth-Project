@@ -5,10 +5,9 @@ import sharedObject.IRenderable;
 public abstract class Entity implements IRenderable{
 	
 	protected int z;
-	protected boolean visibility;
 	
+	// set z to 100.
 	public Entity() {
-		visibility = true;
 		z = 100;
 	}
 	
@@ -16,12 +15,6 @@ public abstract class Entity implements IRenderable{
 		return z;
 	}
 	
-	public boolean isVisible() {
-		return visibility;
-	}
-	
 	public abstract void update();
-	
-	
-	
+
 }

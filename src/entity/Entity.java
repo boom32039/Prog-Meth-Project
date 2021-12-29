@@ -2,7 +2,7 @@ package entity;
 
 import sharedObject.IRenderable;
 
-public abstract class Entity implements IRenderable{
+public abstract class Entity implements IRenderable {
 	
 	protected int z;
 	
